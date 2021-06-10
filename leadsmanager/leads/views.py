@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from .models import Lead
+from .serilizer import LeadSerializer
+from rest_framework import generics
+
+class LeadListCreate(generics.ListCreateAPIView):
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
 
 # Create your views here.
